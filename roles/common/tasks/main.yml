@@ -1,0 +1,12 @@
+---
+- name: Get Build Tools
+  apt: name=build-essential state=present
+
+#- name: Create Redis Directory
+#  file: path=/home/merrick/auto-redis state=directory mode="u=rw,g=r,o=r" recurse=yes
+
+- name: Unpack Redis Archive
+  unarchive: src=~/redisbin.tar.gz dest=~/auto-redis/
+
+- name: Run Redis Server
+  command: ~/auto-redis/redisbin/redis-server

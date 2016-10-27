@@ -1,0 +1,7 @@
+---
+- name: Download, Build, Install, and Configure Redis
+  hosts: localhost
+  remote_user: root
+  
+  roles:
+    - common
